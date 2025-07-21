@@ -11,4 +11,4 @@ class Transaction:
             'amount': self.amount
         }
     def __str__(self):
-        return f"{self.date} | {self.category} | ${self.amount:.2f}"
+        return f"{self.date} | {self.category} | ₦{self.amount:.2f}"
