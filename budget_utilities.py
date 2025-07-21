@@ -1,6 +1,7 @@
 from datetime import datetime
 import json
 import os
+from collections import defaultdict
 
 DATA_FILE = 'budget_data.json'
 
@@ -33,3 +34,11 @@ class Transaction:
 
     def __str__(self):
         return f"{self.date} | {self.category} | ₦{self.amount:.2f}"
+    print("Budget data loaded successfully.")
+
+
+def calc_total(transactions):
+    grand_total = defaultdict(float)
+    for transaction in transactions:
+        grand_total[transaction.category] += transaction.amount
+    return dict(grand_total)
