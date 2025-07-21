@@ -2,6 +2,25 @@
     {
         "date": "2025-07-21",
         "category": "Groceries",
+        "item": "General",
         "amount": 1500.0
+    },
+    {
+        "date": "2025-07-21",
+        "category": "Food",
+        "item": "General",
+        "amount": 9000.0
+    },
+    {
+        "date": "2025-07-21",
+        "category": "Food",
+        "item": "garri",
+        "amount": 87000.0
+    },
+    {
+        "date": "2025-07-21",
+        "category": "Groceries",
+        "item": "cucumber",
+        "amount": 900.0
     }
 ]
