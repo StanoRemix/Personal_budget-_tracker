@@ -2,18 +2,24 @@ from budget_utilities import Transaction, save_data, load_data, calc_total
 
 
 def menu_display():
-    print("\n===== PERSONAL BUDGET TRACKER =====")
-    print("-" * 40)
     print("\nBudget Tracker Menu:")
     print("1. Add Transaction")
     print("2. View Transactions")
-    print("3. Calculate Total by Category")
+    print("3. View Categories Total")
     print("4. Exit")
     print("-" * 40)
 
 
 def prime():
     transactions = load_data()
+    print("\n===== PERSONAL BUDGET TRACKER =====")
+    print("-" * 40)
+    if transactions:
+        print(
+            f"\nLoading previous transactions... \nFound {len(transactions)} transactions.")
+        print(f"{len(transactions)} transactions loaded successfully.")
+    else:
+        print("\nNo previous transactions found. Starting fresh.")
     while True:
         menu_display()
         in_req = int(input("Select an option (1-4): "))
@@ -42,9 +48,12 @@ def prime():
                 print("\nNo transactions to calculate totals.")
             else:
                 totals = calc_total(transactions)
-                print("\nTotal by Category:")
+                print("\n--------- Total by Category ---------")
+                print("-" * 40)
                 for category, total in totals.items():
                     print(f"{category}: ₦{total:.2f}")
+                    print("-" * 40)
+
         elif in_req == 4:
             print("Exiting the budget tracker...")
             break
